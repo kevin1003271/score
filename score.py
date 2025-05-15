@@ -12,8 +12,15 @@ Original file is located at
 grades=input()
 grade_list=grades.split()
 fail_count=0
-for grade in grad
-e_list:
+max=grade_list[0]
+min=grade_list[0]
+for grade in grade_list:
   if int(grade)<60:
     fail_count+=1
+  if grade_list[grade] > max:
+    max=grade_list[grade]
+  if grade_list[grade] < min:
+    min=grade_list[grade]
 print(fail_count)
+print(max)
+print(min)
