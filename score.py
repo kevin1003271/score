@@ -7,13 +7,25 @@ Original file is located at
     https://colab.research.google.com/drive/18IfXReWTAVe_BaauA80tJjmQdTXNJ3l3
 """
 
-score=input().split()
-count=0
+grades=input()
+grade_list=grades.split()
+fail_count=0
 total=0
-for i in len(score):
-  if score[i]<60:
-    count=count+1
-  total=total+int(score[i])
 
-print(count)
-print(total/len(score))
+grade_list = [int(g) for g in grade_list]
+
+max_grade = grade_list[0]
+min_grade = grade_list[0]
+
+for grade in grade_list:
+    total += grade
+    if grade < 60:
+        fail_count += 1
+    if grade > max_grade:
+        max_grade = grade
+    if grade < min_grade:
+        min_grade = grade
+print(fail_count)
+print(max)
+print(min)
+print(total/len(grade_list))
